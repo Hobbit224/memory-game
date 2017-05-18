@@ -1,0 +1,43 @@
+img {
+	max-width: 100%;
+
+}
+
+/*Needs perspective so its children can be 3D*/
+.card{
+	height: 300px;
+	width: 300px;
+	border: 2px solid black;
+	perspective: 500px;
+}
+
+.card-holder{
+	width: 300px;
+	/*Children are absolute so this must be absolute as an anchor*/
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.card-front, .card-back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+
+}
+
+.card-front{
+	transform: rotateY(180deg);
+}
+
+.card-back{
+	background: url('../images/logo-bw.png') no-repeat 45% 50%;
+	height: 300px;
+	min-width: 300px;
+}
+
+.flip{
+	transform: rotateY(180deg);
+}
